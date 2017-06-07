@@ -301,8 +301,10 @@ class Work(threading.Thread):
 
 
 def oneDoProcessor(pathName, keyword):
-    work_manager = WorkManager(10, pathName, keyword)  # 或者work_manager =  WorkManager(10000, 20)
-    work_manager.wait_allcomplete()
+    # work_manager = WorkManager(10, pathName, keyword)  # 或者work_manager =  WorkManager(10000, 20)
+    # work_manager.wait_allcomplete()
+    for i in range(40):
+        do_job((i, pathName, keyword))
     return '%s%s%s' % (pathName, '===========>', keyword)
 
 
