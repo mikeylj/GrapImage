@@ -310,7 +310,7 @@ def oneDoProcessor(pathName, keyword):
 
 if __name__ == '__main__':
     start = time.time()
-    pool = multiprocessing.Pool(processes=4)
+    pool = multiprocessing.Pool()
     result = []
     arr = getFileContent('2.txt')
     dict = getSearchContents(arr)
