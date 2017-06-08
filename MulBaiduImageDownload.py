@@ -312,7 +312,7 @@ if __name__ == '__main__':
     start = time.time()
     pool = multiprocessing.Pool()
     result = []
-    arr = getFileContent('2.txt')
+    arr = getFileContent('tmp.txt')
     dict = getSearchContents(arr)
     for k in sorted(dict):
         print "dict[%s] =" % k, dict[k]
