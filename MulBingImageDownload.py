@@ -155,7 +155,8 @@ def getBingPageImageUrls(page, sclass, keyword):
                 flower = {
                     "url": image.attrs['src'],
                     'class': sclass,
-                    'sub_class': keyword
+                    'sub_class': keyword,
+                    'source' : 'bing'
                 }
                 mysql.insertData('bing_flower', flower)
                 # imglist.append(d['thumbURL'])
@@ -167,7 +168,7 @@ def getBingPageImageUrls(page, sclass, keyword):
             # print i, image.attrs['alt']
             # downLoad(image.attrs['src'], path, keyword)
     except ValueError, e:
-        print 'getPageImageUrl ValueError', e
+        print 'getBingPageImageUrls ValueError', e
 
     print imglist
     return imglist
