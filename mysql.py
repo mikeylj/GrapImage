@@ -84,4 +84,18 @@ class Mysql:
         except MySQLdb.Error, e:
             Log.error("数据库错误，原因%d: %s" % (e.args[0], e.args[1]))
 
+    #根据条件直接查询
+    def queryDataBySql(self, sql):
+        try:
+            self.db.set_character_set('utf8')
+            Log.info(sql)
+            try:
+                self.cur.execute(sql)
+                results = self.cur.fetchall()
+                return results
+            except MySQLdb.Error, e:
+                Log.error("查询失败")
+        except MySQLdb.Error, e:
+            Log.error("数据库错误，原因%d: %s" % (e.args[0], e.args[1]))
+
 

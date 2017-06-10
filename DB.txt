@@ -31,3 +31,5 @@ select `class`, `sub_class`,count(url) as num from flower group by `class`, `sub
 #运行环境：
 sudo pip install requests
 sudo pip install beautifulsoup4
+sudo pip install lxml
+sudo pip install MySQL-python
