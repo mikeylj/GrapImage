@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `flower`(
-   `id` INT UNSIGNED BIG INT AUTO_INCREMENT,
+   `id` INT UNSIGNED AUTO_INCREMENT,
    `url` VARCHAR(200) NOT NULL,
    `class` VARCHAR(50) NOT NULL,
    `sub_class` VARCHAR(50) NOT NULL,
@@ -9,8 +9,24 @@ CREATE TABLE IF NOT EXISTS `flower`(
 CREATE UNIQUE INDEX indexUrl ON flower(url(200))
 
 
+CREATE TABLE IF NOT EXISTS `bing_flower`(
+   `id` INT UNSIGNED  AUTO_INCREMENT,
+   `url` VARCHAR(200) NOT NULL,
+   `class` VARCHAR(50) NOT NULL,
+   `sub_class` VARCHAR(50) NOT NULL,
+   PRIMARY KEY ( `id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE UNIQUE INDEX indexUrl ON bing_flower(url(200))
+
+
 select `class`, `sub_class`,count(url) as num from flower group by `class`, `sub_class` order by num desc;
 
 select `class`, count(url) as num from flower group by `class` order by num desc;
 
 select `class`, `sub_class`,count(url) as num from flower group by `class`, `sub_class` order by num desc;
+
+
+#运行环境：
+sudo pip install requests
+sudo pip install beautifulsoup4
