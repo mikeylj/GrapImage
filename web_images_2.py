@@ -116,7 +116,7 @@ def train_top_model():
     model.add(Flatten(input_shape=train_data.shape[1:]))
     model.add(Dense(256, activation='relu'))
     model.add(Dropout(0.5))
-    model.add(Dense(8, activation='softmax'))
+    model.add(Dense(35, activation='softmax'))
 
     model.compile(optimizer='rmsprop',
                   loss='binary_crossentropy', metrics=['accuracy'])
@@ -133,7 +133,7 @@ def train_top_model():
     # model.save_weights(top_model_weights_path)
     model.save_weights(top_model_weights_path)
 #训练
-save_bottlebeck_features()
+# save_bottlebeck_features()
 train_top_model()
 
 # model = Sequential()
