@@ -11,14 +11,14 @@ from keras.utils import to_categorical #多分类
 
 # path to the model weights files.
 # weights_path = '../keras/examples/vgg16_weights.h5'
-top_model_weights_path = 'bottleneck_fc_model_weights.h5'
+top_model_weights_path = '/home/ylj/tag_sys/PIC_DATA/bottleneck_fc_model_weights.h5'
 # dimensions of our images.
 img_width, img_height = 150, 150
 
-train_data_dir = 'data/train'
-validation_data_dir = 'data/validation'
-nb_train_samples = 12000
-nb_validation_samples = 4000
+train_data_dir = '/home/ylj/tag_sys/PIC_DATA/train'
+validation_data_dir = '/home/ylj/tag_sys/PIC_DATA/validation'
+nb_train_samples = 168000
+nb_validation_samples = 42000
 epochs = 50
 batch_size = 16
 
@@ -33,7 +33,7 @@ top_model = Sequential()
 top_model.add(Flatten(input_shape=base_model.output_shape[1:]))
 top_model.add(Dense(256, activation='relu'))
 top_model.add(Dropout(0.5))
-top_model.add(Dense(8, activation='softmax'))
+top_model.add(Dense(35, activation='softmax'))
 
 # note that it is necessary to start with a fully-trained
 # classifier, including the top classifier,
