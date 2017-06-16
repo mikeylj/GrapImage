@@ -25,12 +25,12 @@ if __name__ == '__main__':
         # 'test_img/train/菊花/7713.jpg',
         # 'test_img/train/菊花/7714.jpg',
         # 'test_img/train/菊花/7715.jpg',
-        '/home/yulijun/tag_sys/test/flower/test_img/knx_1.jpg',
-        '/home/yulijun/tag_sys/test/flower/test_img/knx_2.jpg',
-        '/home/yulijun/tag_sys/test/flower/test_img/knx_3.jpg',
+        './test_img/knx_1.jpg',
+        './test_img/knx_2.jpg',
+        './test_img/knx_3.jpg',
 
     ]
-    model = load_model('/home/yulijun/tag_sys/test/flower/vgg_final.h5')
+    model = load_model('./vgg_final.h5')
     for arg in sys.argv:
         if "jpg" in arg:
             # print arg
