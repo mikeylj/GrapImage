@@ -25,7 +25,7 @@ dic_num = 35
 nb_train_samples = 4800 * dic_num
 nb_validation_samples = 1200 * dic_num
 epochs = 50
-batch_size = 64
+batch_size = 120
 
 #设定GPU使用内存大小(Tensorflow backend)
 def get_session(gpu_fraction=0.3):
@@ -124,7 +124,7 @@ def train_top_model():
     # model.save_weights(top_model_weights_path)
     model.save_weights(top_model_weights_path)
 #训练
-save_bottlebeck_features()
+# save_bottlebeck_features()
 train_top_model()
 
 # model = Sequential()
