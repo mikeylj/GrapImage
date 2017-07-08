@@ -7,7 +7,7 @@ import numpy as np
 
 model = ResNet50(weights='imagenet')
 
-img_path = '/home/ylj/tag_sys/PIC_DATA/train/矮紫薇/c_820039_0_2136.jpeg'
+img_path = '/home/ylj/tag_sys/PIC_DATA/train/桉叶藤/c_816669_0_3813.jpeg'
 img = image.load_img(img_path, target_size=(224, 224))
 x = image.img_to_array(img)
 x = np.expand_dims(x, axis=0)
