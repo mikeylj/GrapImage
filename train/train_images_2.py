@@ -18,10 +18,10 @@ img_width, img_height = 150, 150
 train_data_dir = '/home/ylj/tag_sys/PIC_DATA/train'
 validation_data_dir = '/home/ylj/tag_sys/PIC_DATA/validation'
 
-dic_num = 8
+dic_num = 36
 
-nb_train_samples = 1500 * dic_num
-nb_validation_samples = 500 * dic_num
+nb_train_samples = 4800 * dic_num
+nb_validation_samples = 1200 * dic_num
 
 # nb_train_samples = 15000
 # nb_validation_samples = 2500
