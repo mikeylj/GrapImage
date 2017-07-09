@@ -58,12 +58,12 @@ model = Model(inputs= base_model.input, outputs= top_model(base_model.output))
 for i,layer in enumerate(model.layers):
     print i, layer.name
 
-import os
-os._exit(0)
+# import os
+# os._exit(0)
 
-for layer in model.layers[:17]:
+for layer in model.layers[:19]:
     layer.trainable = False
-for layer in model.layers[17:]:
+for layer in model.layers[19:]:
     layer.trainable = True
 
 # compile the model with a SGD/momentum optimizer
