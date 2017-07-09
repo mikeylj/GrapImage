@@ -18,13 +18,13 @@ from keras import backend as K
 img_width, img_height = 150, 150
 
 top_model_weights_path = './trained_vgg16/bottleneck_fc_model_weights.h5'
-train_data_dir = '/home/ylj/tag_sys/PIC_DATA/train'
-validation_data_dir = '/home/ylj/tag_sys/PIC_DATA/validation'
-dic_num = 12
+train_data_dir = '/home/ylj/ai/data/train'
+validation_data_dir = '/home/ylj/ai/data/validation'
+dic_num = 8
 
-nb_train_samples = 4800 * dic_num
-nb_validation_samples = 1200 * dic_num
-epochs = 500
+nb_train_samples = 1500 * dic_num
+nb_validation_samples = 500 * dic_num
+epochs = 50
 batch_size = 16
 
 #设定GPU使用内存大小(Tensorflow backend)
