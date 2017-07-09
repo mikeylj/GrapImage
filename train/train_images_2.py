@@ -26,7 +26,7 @@ nb_validation_samples = 500 * dic_num
 # nb_train_samples = 15000
 # nb_validation_samples = 2500
 epochs = 50
-batch_size = 100
+batch_size = 16
 
 # build the VGG16 network
 input_tensor = Input(shape=(150,150,3))
