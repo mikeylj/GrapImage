@@ -25,7 +25,7 @@ dic_num = 8
 nb_train_samples = 1500 * dic_num
 nb_validation_samples = 500 * dic_num
 epochs = 50
-batch_size = 16
+batch_size = 32
 
 #设定GPU使用内存大小(Tensorflow backend)
 def get_session(gpu_fraction=0.3):
