@@ -15,18 +15,18 @@ top_model_weights_path = './trained_vgg16/bottleneck_fc_model_weights.h5'
 # dimensions of our images.
 img_width, img_height = 150, 150
 
-train_data_dir = '/home/ylj/tag_sys/PIC_DATA/train'
-validation_data_dir = '/home/ylj/tag_sys/PIC_DATA/validation'
+train_data_dir = '/home/ylj/ai/data/train'
+validation_data_dir = '/home/ylj/ai/data/validation'
 
-dic_num = 35
+dic_num = 8
 
-nb_train_samples = 4800 * dic_num
-nb_validation_samples = 1200 * dic_num
+nb_train_samples = 1500 * dic_num
+nb_validation_samples = 500 * dic_num
 
 # nb_train_samples = 15000
 # nb_validation_samples = 2500
 epochs = 50
-batch_size = 16
+batch_size = 100
 
 # build the VGG16 network
 input_tensor = Input(shape=(150,150,3))
