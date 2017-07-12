@@ -18,14 +18,14 @@ from keras import backend as K
 img_width, img_height = 150, 150
 
 top_model_weights_path = './trained_vgg16/bottleneck_fc_model_weights.h5'
-train_data_dir = '/home/ylj/ai/data/train'
-validation_data_dir = '/home/ylj/ai/data/validation'
+train_data_dir = '/home/ylj/ai/data_new/train'
+validation_data_dir = '/home/ylj/ai/data_new/validation'
 dic_num = 8
 
-nb_train_samples = 1500 * dic_num
-nb_validation_samples = 500 * dic_num
+nb_train_samples = 100 * dic_num
+nb_validation_samples = 20 * dic_num
 epochs = 50
-batch_size = 100
+batch_size = 5
 
 #设定GPU使用内存大小(Tensorflow backend)
 def get_session(gpu_fraction=0.3):
@@ -78,7 +78,7 @@ def train_top_model():
     #     [0] * 3000 + [1] * 3000 + [2] * 3000 + [3] * 3000 + [4] * 2992)
     labels = []
     for i in range(dic_num):
-        for j in range(1500):
+        for j in range(100):
             labels.append(i)
     train_labels = np.array(
         labels
@@ -91,7 +91,7 @@ def train_top_model():
     #     [0] * 500 + [1] *500 + [2] * 500 + [3] * 500 + [4] * 496)
     labels = []
     for i in range(dic_num):
-        for j in range(500):
+        for j in range(20):
             labels.append(i)
     validation_labels = np.array(
         labels
