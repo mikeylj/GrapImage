@@ -8,6 +8,29 @@ import numpy as np
 from keras.preprocessing import image
 import sys
 
+def get_top_predictions(preds, top=5):
+    """Decodes the prediction of an ImageNet model.
+
+    # Arguments
+        preds: Numpy tensor encoding a batch of predictions.
+        top: integer, how many top-guesses to return.
+
+    # Returns
+        A list of lists of top class prediction tuples
+        `(class_name, class_description, score)`.
+        One list of tuples per sample in batch input.
+
+    # Raises
+        ValueError: in case of invalid shape of the `pred` array
+            (must be 2D).
+    """
+    results = []
+    for pred in preds:
+        top_indices = pred.argsort()[-top:][::-1]
+        # result = [tuple(CLASS_INDEX[str(i)]) + (pred[i],) for i in top_indices]
+        # result.sort(key=lambda x: x[2], reverse=True)
+        # results.append(result)
+    return top_indices
 if __name__ == '__main__':
     image_paths = [
         # 'test_img/train/桂花/3701.jpg',
@@ -105,7 +128,10 @@ if __name__ == '__main__':
         x = np.expand_dims(x, axis=0)
         # print(x.shape)
         probs = model.predict(x)
-        print p, np.argmax(probs)
+        # print p, np.argmax(probs)
+        print p, get_top_predictions(probs, 3)
+
+        # decode_predictions(y_pred)
     #
     #     # img = cv2.imread(p)
     #     # img = cv2.resize(img, (150, 150)).astype(np.float32) / 255.
