@@ -99,7 +99,7 @@ if __name__ == '__main__':
     # 牡丹
     # 郁金香
 
-    model = load_model('/home/hlgdeep/ai/keras/ImgClassify/vgg_final.h5')
+    model = load_model('trained_vgg16/vgg_final_vgg19.h5')
     # for arg in sys.argv:
     #     if "jpg" in arg:
     #         # print arg
