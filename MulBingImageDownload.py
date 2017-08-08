@@ -158,7 +158,7 @@ def getBingPageImageUrls(page, sclass, keyword):
                     'sub_class': keyword,
                     'source' : 'bing'
                 }
-                mysql.insertData('bing_flower', flower)
+                mysql.insertData('new_bing_flower', flower)
                 # imglist.append(d['thumbURL'])
                 # print d['fromPageTitle']
             except Exception, e:
@@ -341,7 +341,7 @@ class Work(threading.Thread):
 def oneDoProcessor(pathName, keyword):
     # work_manager = WorkManager(10, pathName, keyword)  # 或者work_manager =  WorkManager(10000, 20)
     # work_manager.wait_allcomplete()
-    for i in range(40):
+    for i in range(10):
         do_job((i, pathName, keyword))
     return '%s%s%s' % (pathName, '===========>', keyword)
 
@@ -350,8 +350,9 @@ if __name__ == '__main__':
     start = time.time()
     pool = multiprocessing.Pool()
     result = []
-    arr = getFileContent('flower_name.txt')
+    arr = getFileContent('flowers.txt')
     dict = getSearchContents(arr)
+
     for k in sorted(dict):
         print "dict[%s] =" % k, dict[k]
         result.append(pool.apply_async(oneDoProcessor, (dict[k], k)))
