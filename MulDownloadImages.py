@@ -189,15 +189,14 @@ if __name__ == '__main__':
         for row in rows:
             url = row[1]
             path = 'new_baidu_flower/%s/%s' % (row[2], row[3])
-            print 'python DownloadOnePic.py %s %s' % (url, path)
+            print 'python DownloadOnePic.py "%s" "%s"' % (url, path)
             (status, output) = commands.getstatusoutput('python DownloadOnePic.py "%s" "%s"' % (url, path))
 
 
         while(int(getCurrExecNum()) > 0):
             print "Current Proc:" + getCurrExecNum()
             sleep(1)
-        print '当前' + i + '完成'
-        os._exit(0)
+        print '当前' + str(i) + '页完成'
 
 
 
