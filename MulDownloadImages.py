@@ -86,7 +86,7 @@ def download_link(directory, link):
         print 'DOWNLOAD ERROR:', "SocketError", link
 
 def setup_download_dir(keyword):
-   download_dir = Path('images/' + keyword)
+   download_dir = Path('new_baidu_flower/' + keyword)
    if not download_dir.exists():
        download_dir.mkdir(parents = True)
    return download_dir
@@ -146,14 +146,14 @@ class DownloadWorker(Thread):
 
 #从数据库中取出所有class, sub_class
 def getClassesFromDB():
-    sql = 'select `class`, `sub_class` from flower group by `class`, `sub_class`'
+    sql = 'select `class`, `sub_class` from new_baidu_flower group by `class`, `sub_class`'
     db = Mysql()
     query = db.queryDataBySql(sql)
     return query
 
 #从数据库里取出总条数
 def getTotalNum():
-    sql = 'select count(*) from new_bing_flower';
+    sql = 'select count(*) from new_baidu_flower';
     db = Mysql()
     query = db.queryDataBySql(sql)
     return query
@@ -168,7 +168,7 @@ if __name__ == '__main__':
     pagesize = 10000;
     pages = math.ceil(getTotalNum() * 1.0 / pagesize)
     print pages;
-    
+
 
 
     # for i in getNums(40):
