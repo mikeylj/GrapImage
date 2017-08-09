@@ -193,7 +193,7 @@ if __name__ == '__main__':
             os.system('python DownloadOnePic.py "%s" "%s" &' % (url, path))
 
 
-        while(int(getCurrExecNum()) > 0):
+        while(int(getCurrExecNum()) > 100):
             print "Current Proc:" + getCurrExecNum()
             sleep(1)
         print '当前' + str(i) + '页完成'
