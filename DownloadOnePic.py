@@ -32,10 +32,10 @@ def download_link(directory, link):
     filename = m2.hexdigest();
     download_path = '%s/%s' % (directory, filename + ".jpg") #os.path.join(directory, uuid.uuid1().__str__() + ".jpg")
     if checkFileExsist(download_path):
-        logger.info('文件已存在 %s', link)
+        print ('文件已存在 %s', link)
         return True
 
-    logger.info('Downloading %s', link)
+    print('Downloading %s', link)
 
     try:
         headers = {
