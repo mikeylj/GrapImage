@@ -185,7 +185,10 @@ if __name__ == '__main__':
     for i in xrange(pages):
         rows = getPageRows(i, pagesize)
         for row in rows:
-            print row
+            url = row[1]
+            path = 'new_baidu_flower/%s/%s' % (row[2], row[3])
+            print url, path
+            os._exit(0)
 
         os._exit(0)
 
