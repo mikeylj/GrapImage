@@ -161,11 +161,13 @@ def getTotalNum():
 
 if __name__ == '__main__':
     ts = time()
-    result = getClassesFromDB()
-    for row in result:
-        print row[0], row[1]
-        download_dir = setup_download_dir('%s/%s' % (row[0], row[1]))
+    # result = getClassesFromDB()
+    # for row in result:
+    #     print row[0], row[1]
+    #     download_dir = setup_download_dir('%s/%s' % (row[0], row[1]))
     pagesize = 10000;
+    print getTotalNum()
+    print getTotalNum() * 1.0 / pagesize
     pages = math.ceil(getTotalNum() * 1.0 / pagesize)
     print pages;
 
