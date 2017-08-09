@@ -193,7 +193,7 @@ if __name__ == '__main__':
             (status, output) = commands.getstatusoutput('python DownloadOnePic.py "%s" "%s"' % (url, path))
 
 
-        while(getCurrExecNum() > 0):
+        while(int(getCurrExecNum()) > 0):
             print "Current Proc:" + getCurrExecNum()
             sleep(1)
         print '当前' + i + '完成'
