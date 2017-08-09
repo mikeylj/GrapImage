@@ -159,6 +159,13 @@ def getTotalNum():
     query = db.queryDataBySql(sql)
     return query
 
+def getPageRows(page, pagesize):
+    offset = (page - 1) * pagesize
+    sql = 'select * from new_baidu_flower limit %s $s', (offset, pagesize);
+    db = Mysql()
+    query = db.queryDataBySql(sql)
+    return query
+
 
 if __name__ == '__main__':
     ts = time()
@@ -171,8 +178,15 @@ if __name__ == '__main__':
     print getTotalNum()[0][0] * 1.0 / pagesize
     pages = math.ceil(getTotalNum()[0][0] * 1.0 / pagesize)
     print pages;
-    (status, output) = commands.getstatusoutput('ps aux|grep python|grep -v grep')
-    print status, output
+    # (status, output) = commands.getstatusoutput('ps aux|grep python|grep -v grep')
+    # print status, output
+
+    for i in xrange(pages):
+        rows = getPageRows(i)
+        for row in rows:
+            print row[1], row[2], row[3]
+
+        os._exit(0)
 
 
 
