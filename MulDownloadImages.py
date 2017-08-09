@@ -190,7 +190,7 @@ if __name__ == '__main__':
             url = row[1]
             path = 'new_baidu_flower/%s/%s' % (row[2], row[3])
             print 'python DownloadOnePic.py %s %s' % (url, path)
-            (status, output) = commands.getstatusoutput('python DownloadOnePic.py %s %s' % (url, path))
+            (status, output) = commands.getstatusoutput('python DownloadOnePic.py "%s" "%s"' % (url, path))
 
 
         while(getCurrExecNum() > 0):
