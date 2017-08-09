@@ -16,6 +16,7 @@ from threading import Thread
 import multiprocessing
 from mysql import Mysql
 import math
+import commands
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -170,6 +171,9 @@ if __name__ == '__main__':
     print getTotalNum()[0][0] * 1.0 / pagesize
     pages = math.ceil(getTotalNum()[0][0] * 1.0 / pagesize)
     print pages;
+    (status, output) = commands.getstatusoutput('ps aux|grep python|grep -v grep')
+    print status, output
+
 
 
 
