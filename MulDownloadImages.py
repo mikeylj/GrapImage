@@ -182,7 +182,7 @@ if __name__ == '__main__':
     # print status, output
 
     for i in xrange(pages):
-        rows = getPageRows(i)
+        rows = getPageRows(i, pagesize)
         for row in rows:
             print row[1], row[2], row[3]
 
