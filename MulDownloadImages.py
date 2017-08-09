@@ -160,8 +160,9 @@ def getTotalNum():
     return query
 
 def getPageRows(page, pagesize):
-    offset = (page - 1) * pagesize
+    offset = page * pagesize
     sql = 'select * from new_baidu_flower limit %s $s', (offset, pagesize);
+    print sql;
     db = Mysql()
     query = db.queryDataBySql(sql)
     return query
