@@ -192,10 +192,11 @@ if __name__ == '__main__':
         for row in rows:
             url = row[1]
             path = 'new_baidu_flower/%s/%s' % (row[2], row[3])
-            # (status, output) = commands.getstatusoutput('python DownloadOnePic.py %s %s' % (url, path))
+            (status, output) = commands.getstatusoutput('python DownloadOnePic.py %s %s' % (url, path))
 
-        print getCurrExecNum()
+
         while(getCurrExecNum() > 0):
+            print "Current Proc:" + getCurrExecNum()
             sleep(1)
 
         os._exit(0)
