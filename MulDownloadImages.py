@@ -184,9 +184,6 @@ if __name__ == '__main__':
     pages = int(math.ceil(getTotalNum()[0][0] * 1.0 / pagesize))
     print pages;
 
-    print getCurrExecNum()
-    os._exit(0)
-
     for i in xrange(pages):
         rows = getPageRows(i, pagesize)
         for row in rows:
