@@ -15,6 +15,7 @@ import Queue
 from threading import Thread
 import multiprocessing
 from mysql import Mysql
+import math
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -150,6 +151,12 @@ def getClassesFromDB():
     query = db.queryDataBySql(sql)
     return query
 
+#从数据库里取出总条数
+def getTotalNum():
+    sql = 'select count(*) from new_bing_flower';
+    db = Mysql()
+    query = db.queryDataBySql(sql)
+    return query
 
 
 if __name__ == '__main__':
@@ -157,7 +164,11 @@ if __name__ == '__main__':
     result = getClassesFromDB()
     for row in result:
         print row[0], row[1]
-        download_dir = setup_download_dir('%s%s' % (row[0], row[1]))
+        download_dir = setup_download_dir('%s/%s' % (row[0], row[1]))
+    pagesize = 10000;
+    pages = math.ceil(getTotalNum() * 1.0 / pagesize)
+    print pages;
+    
 
 
     # for i in getNums(40):
