@@ -179,8 +179,9 @@ if __name__ == '__main__':
     print getTotalNum()[0][0] * 1.0 / pagesize
     pages = int(math.ceil(getTotalNum()[0][0] * 1.0 / pagesize))
     print pages;
-    # (status, output) = commands.getstatusoutput('ps aux|grep python|grep -v grep')
-    # print status, output
+    (status, output) = commands.getstatusoutput('ps aux|grep python|grep -v grep|wc -l')
+    print status, output
+    os._exit(0)
 
     for i in xrange(pages):
         rows = getPageRows(i, pagesize)
