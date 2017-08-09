@@ -167,6 +167,10 @@ def getPageRows(page, pagesize):
     query = db.queryDataBySql(sql)
     return query
 
+def getCurrExecNum():
+    (status, output) = commands.getstatusoutput('ps aux|grep "python DownloadOnePic.py"|grep -v grep|wc -l')
+    return output
+
 
 if __name__ == '__main__':
     ts = time()
@@ -174,13 +178,13 @@ if __name__ == '__main__':
     # for row in result:
     #     print row[0], row[1]
     #     download_dir = setup_download_dir('%s/%s' % (row[0], row[1]))
-    pagesize = 10000;
+    pagesize = 100;
     print getTotalNum()[0][0]
     print getTotalNum()[0][0] * 1.0 / pagesize
     pages = int(math.ceil(getTotalNum()[0][0] * 1.0 / pagesize))
     print pages;
-    (status, output) = commands.getstatusoutput('ps aux|grep python|grep -v grep|wc -l')
-    print status, output
+
+    print getCurrExecNum()
     os._exit(0)
 
     for i in xrange(pages):
@@ -188,8 +192,11 @@ if __name__ == '__main__':
         for row in rows:
             url = row[1]
             path = 'new_baidu_flower/%s/%s' % (row[2], row[3])
-            print url, path
-            os._exit(0)
+            # (status, output) = commands.getstatusoutput('python DownloadOnePic.py %s %s' % (url, path))
+
+        print getCurrExecNum()
+        while(getCurrExecNum() > 0):
+            sleep(1)
 
         os._exit(0)
 
