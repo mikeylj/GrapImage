@@ -64,7 +64,7 @@ def download_link(directory, link):
 
 
 if __name__ == '__main__':
-    url = sys.argv[2]
-    path = sys.argv[3]
+    url = sys.argv[1]
+    path = sys.argv[2]
     print url, path
     download_link(path, url)
