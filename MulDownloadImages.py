@@ -184,7 +184,7 @@ if __name__ == '__main__':
     for i in xrange(pages):
         rows = getPageRows(i, pagesize)
         for row in rows:
-            print row[1], row[2], row[3]
+            print row
 
         os._exit(0)
 
