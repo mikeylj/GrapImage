@@ -87,7 +87,7 @@ def download_link(directory, link):
         print 'DOWNLOAD ERROR:', "SocketError", link
 
 def setup_download_dir(keyword):
-   download_dir = Path('new_baidu_flower/' + keyword)
+   download_dir = Path('new_bing_flower/' + keyword)
    if not download_dir.exists():
        download_dir.mkdir(parents = True)
    return download_dir
@@ -147,21 +147,21 @@ class DownloadWorker(Thread):
 
 #从数据库中取出所有class, sub_class
 def getClassesFromDB():
-    sql = 'select `class`, `sub_class` from new_baidu_flower group by `class`, `sub_class`'
+    sql = 'select `class`, `sub_class` from new_bing_flower group by `class`, `sub_class`'
     db = Mysql()
     query = db.queryDataBySql(sql)
     return query
 
 #从数据库里取出总条数
 def getTotalNum():
-    sql = 'select count(*) from new_baidu_flower';
+    sql = 'select count(*) from new_bing_flower';
     db = Mysql()
     query = db.queryDataBySql(sql)
     return query
 
 def getPageRows(page, pagesize):
     offset = page * pagesize
-    sql = 'select * from new_baidu_flower limit %s, %s' %  (offset, pagesize);
+    sql = 'select * from new_bing_flower limit %s, %s' %  (offset, pagesize);
     print sql;
     db = Mysql()
     query = db.queryDataBySql(sql)
@@ -188,12 +188,12 @@ if __name__ == '__main__':
         rows = getPageRows(i, pagesize)
         for row in rows:
             url = row[1]
-            path = 'new_baidu_flower/%s/%s' % (row[2], row[3])
+            path = 'new_bing_flower/%s/%s' % (row[2], row[3])
             print 'python DownloadOnePic.py "%s" "%s"' % (url, path)
             os.system('python DownloadOnePic.py "%s" "%s" &' % (url, path))
 
 
-        while(int(getCurrExecNum()) > 100):
+        while(int(getCurrExecNum()) > 500):
             print "Current Proc:" + getCurrExecNum()
             sleep(1)
         print '当前' + str(i) + '页完成'
