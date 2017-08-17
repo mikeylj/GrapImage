@@ -78,7 +78,7 @@ def train_top_model():
     #     [0] * 3000 + [1] * 3000 + [2] * 3000 + [3] * 3000 + [4] * 2992)
     labels = []
     for i in range(dic_num):
-        for j in range(100):
+        for j in range(96):
             labels.append(i)
     train_labels = np.array(
         labels
@@ -91,7 +91,7 @@ def train_top_model():
     #     [0] * 500 + [1] *500 + [2] * 500 + [3] * 500 + [4] * 496)
     labels = []
     for i in range(dic_num):
-        for j in range(20):
+        for j in range(16):
             labels.append(i)
     validation_labels = np.array(
         labels
