@@ -4,8 +4,8 @@ import codecs
 import os
 import shutil
 
-train_num   = nums * 0.8
-test_num    = nums * 0.2
+train_num   = 96
+test_num    = 16
 pathName = '/home/ylj/tag_sys/GrapImage/baike_fl/tmp_download'
 disPathName = '/home/ylj/tag_sys/GrapImage/baike_train'
 
@@ -25,7 +25,7 @@ for dir_path, dir_names, file_names in os.walk(pathName):
     fileNums = len(file_names)
 
 
-    if fileNums >= 50:
+    if fileNums > 112:
         print dir_path, fileNums
     # os._exit(0)
     if(fileNums > 112):
