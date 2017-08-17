@@ -6,8 +6,8 @@ import shutil
 
 train_num   = nums * 0.8
 test_num    = nums * 0.2
-pathName = '/home/ylj/tag_sys/GrapImage/baike_fl/download'
-disPathName = '/home/ylj/tag_sys/GrapImage/baike_fl/baike_train'
+pathName = '/home/ylj/tag_sys/GrapImage/baike_fl/tmp_download'
+disPathName = '/home/ylj/tag_sys/GrapImage/baike_train'
 
 train_dir = os.path.join(disPathName, 'train')
 validation_dir = os.path.join(disPathName, 'validation')
@@ -25,9 +25,9 @@ for dir_path, dir_names, file_names in os.walk(pathName):
     fileNums = len(file_names)
 
 
-    if fileNums >= 100:
+    if fileNums >= 50:
         print dir_path, fileNums
-    os._exit(0)
+    # os._exit(0)
     if(fileNums > 112):
         #测试训练集
         for i in range(fileNums):
