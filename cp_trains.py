@@ -7,8 +7,8 @@ from os.path import join, getsize
 
 train_num   = 96
 test_num    = 16
-pathName = '/home/ylj/tag_sys/GrapImage/new_baidu_flower'
-disPathName = '/home/ylj/tag_sys/GrapImage/new_baidu_flower_train'
+pathName = '/home/ylj/tag_sys/GrapImage/baike_fl/download'
+disPathName = '/home/ylj/tag_sys/GrapImage/baike_fl/baike_train'
 
 # train_dir = os.path.join(disPathName, 'train')
 # validation_dir = os.path.join(disPathName, 'validation')
