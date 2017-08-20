@@ -54,15 +54,15 @@ def getClasses(path):
 images = getClasses(pathName)
 
 for p in images:
-    print p
-    # img = image.load_img(p, target_size=(150, 150))
-    # x = image.img_to_array(img).astype(np.float32) / 255
-    # # print(x.shape)
-    # x = np.expand_dims(x, axis=0)
-    # # print(x.shape)
-    # probs = model.predict(x)
-    # # print p, np.argmax(probs)
-    # print p, get_top_predictions(probs, 3)
+    # print p
+    img = image.load_img(p, target_size=(150, 150))
+    x = image.img_to_array(img).astype(np.float32) / 255
+    # print(x.shape)
+    x = np.expand_dims(x, axis=0)
+    # print(x.shape)
+    probs = model.predict(x)
+    # print p, np.argmax(probs)
+    print p, get_top_predictions(probs, 3)
 
 
 
