@@ -5,8 +5,9 @@ from keras.preprocessing import image
 from keras.applications.resnet50 import preprocess_input, decode_predictions
 import numpy as np
 import os
+from keras import applications
 
-model = ResNet50(weights='imagenet')
+model = applications.VGG16(weights='imagenet')
 
 pathName = '/home/ylj/tag_sys/GrapImage/baike_fl/baike_train/'
 
