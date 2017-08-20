@@ -8,7 +8,7 @@ import os
 
 model = ResNet50(weights='imagenet')
 
-pathName = '/home/ylj/tag_sys/GrapImage/baike_fl'
+pathName = '/home/ylj/tag_sys/GrapImage/baike_fl/baike_train/'
 
 def get_top_predictions(preds, top=5):
     """Decodes the prediction of an ImageNet model.
@@ -42,9 +42,10 @@ def getClasses(path):
             p = os.path.join(dir_path, '.DS_Store')
             os.remove(p)
             print p
-        for f in file_names:
-            # print dir_path + '/' + f
-            image_paths.append(dir_path + '/' + f)
+        if len(file_names) > 2:
+            for f in file_names:
+                # print dir_path + '/' + f
+                image_paths.append(dir_path + '/' + f)
         # fileNums = len(file_names)
         # print dir_path, fileNums
 
