@@ -56,7 +56,7 @@ images = getClasses(pathName)
 
 for p in images:
     print p
-    img = image.load_img(p, target_size=(150, 150))
+    img = image.load_img(p, target_size=(224, 224))
     x = image.img_to_array(img).astype(np.float32) / 255
     # print(x.shape)
     x = np.expand_dims(x, axis=0)
