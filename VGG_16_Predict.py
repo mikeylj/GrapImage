@@ -22,7 +22,7 @@ def getClasses(path):
         print dir_path, fileNums
 
 
-
+getClasses(pathName)
 # img_path = '/home/ylj/tag_sys/PIC_DATA/train/桉叶藤/c_816669_0_3813.jpeg'
 # img = image.load_img(img_path, target_size=(224, 224))
 # x = image.img_to_array(img)
