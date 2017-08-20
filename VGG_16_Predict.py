@@ -8,7 +8,7 @@ import os
 
 model = ResNet50(weights='imagenet')
 
-pathName = '/home/ylj/tag_sys/GrapImage/new_baidu_flower'
+pathName = '/home/ylj/tag_sys/GrapImage/baike_fl'
 
 def getClasses(path):
     for dir_path, dir_names, file_names in os.walk(path):
