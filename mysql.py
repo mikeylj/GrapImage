@@ -61,7 +61,8 @@ class Mysql:
 
     def upDate(self, tablename, data, condition):
         try:
-            print data
+            # print data
+            self.db.set_character_set('utf8')
             sql = self.updateData(tablename, data, condition)
             Log.info(sql)
             result = self.cur.execute(sql)
