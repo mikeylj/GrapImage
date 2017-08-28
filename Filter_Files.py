@@ -43,7 +43,7 @@ def ExecMul(count, commands):
         s = 'python %s "%s" "%s" "%s" &' % (exec_command, sid, url, path)
         print s
         # os.system(path)
-        while (int(getCurrExecNum()) > 500):
+        while (int(getCurrExecNum(exec_command)) > 500):
             print "Current Proc:" + getCurrExecNum(exec_command)
             sleep(1)
 
