@@ -20,12 +20,12 @@ if __name__ == '__main__':
     #文件存在，判断文件是否与名字相同
     op = NETOP()
     strName = op.getImageNameFromBaidu(filename)
-    name = filename.split("/")[-2]
+    name = filename.split("/")[-3]
 
     print strName, name, filename
 
-    # if not NETOP.checkName(name, str):
+    if not op.checkName(name, strName):
     #     os.unlink(p)
-    #     print "已删除文件：", p
+        print "已删除文件：", p
     #
     # print sid, url, path, filename
