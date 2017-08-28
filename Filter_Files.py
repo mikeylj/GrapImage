@@ -3,6 +3,7 @@
 import commands
 from mysql import Mysql
 import hashlib
+from time import sleep, time
 
 #从数据库中取出总数
 def getTableTotal(tablename):
@@ -39,12 +40,18 @@ def ExecMul(count, commands):
         m2.update(url)
         filename = m2.hexdigest();
         path = 'new_baidu_flower/%s/%s/%s' % (sclass, sub_class, filename)
+        s = 'python %s "%s" "%s" "%s" &' % (exec_command, sid, url, path)
+        print s
+        # os.system(path)
+        while (int(getCurrExecNum()) > 500):
+            print "Current Proc:" + getCurrExecNum(exec_command)
+            sleep(1)
 
-        print sid, url, sclass, sub_class, path
+        # print sid, url, sclass, sub_class, path
     # for i in xrange(len(commands)):
     #
     #     print sid
-    #     s = 'python %s "%s" &' % (exec_command, sid)
+    #
     #     print s
 
 
