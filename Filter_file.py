@@ -3,6 +3,7 @@ import sys
 import os
 import hashlib
 from netOp import NETOP
+from mysql import Mysql
 
 if __name__ == '__main__':
     sid = sys.argv[1]
@@ -27,7 +28,12 @@ if __name__ == '__main__':
     if not not op.checkName(name, strName):
         # os.unlink(filename)
         print "已删除文件：", filename, name, strName
-        sql = "update new_bing_flower set isdel=1 where id=%s" % sid
-        print sql
-    #
+        # sql = "update new_bing_flower set isdel=1 where id=%s" % sid
+        db = Mysql()
+        f_status_dict = {
+            'isdel' : 1
+        }
+        db.upDate('new_bing_flower', f_status_dict, " id='%s'" % (sid))
+
+        #
     # print sid, url, path, filename
