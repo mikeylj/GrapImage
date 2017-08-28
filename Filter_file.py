@@ -34,6 +34,5 @@ if __name__ == '__main__':
             'isdel' : 0
         }
         db.upDate('new_bing_flower', f_status_dict, " id='%s'" % (sid))
-
-        #
-    # print sid, url, path, filename
+    else:
+        print "正常：", filename, name, strName
