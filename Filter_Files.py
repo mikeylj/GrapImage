@@ -13,7 +13,7 @@ def getTableTotal(tablename):
     return query
 
 #从数据库中取出一页
-def getPage(tablename, page = 1, pagesize = 10):
+def getPage(tablename, page = 1, pagesize = 10000):
     if page < 1 :
         page = 1
     offset  = (page - 1) * pagesize
@@ -42,7 +42,7 @@ def ExecMul(count, commands):
         print s
         os.system(s)
         # print getCurrExecNum(exec_command)
-        while (int(getCurrExecNum(exec_command)) > 500):
+        while (int(getCurrExecNum(exec_command)) > count):
             print "Current Proc:" + getCurrExecNum(exec_command)
             sleep(1)
 
