@@ -63,9 +63,9 @@ def ExecMul(count, commands):
 
 
 # getTableTotal('new_baidu_flower')
-newBaiDs    = getPage('new_baidu_flower', 1, 1000)
+newBaiDs    = getPage('new_baidu_flower', 1, 10000)
 
-ExecMul(500, newBaiDs)
+ExecMul(10, newBaiDs)
 
 
 # for row in result:
