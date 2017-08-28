@@ -22,7 +22,7 @@ if __name__ == '__main__':
     strName = op.getImageNameFromBaidu(filename)
     name = filename.split("/")[-2]
 
-    print strName, name
+    print strName, name, filename
 
     # if not NETOP.checkName(name, str):
     #     os.unlink(p)
