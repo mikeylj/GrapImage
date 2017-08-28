@@ -38,7 +38,7 @@ def ExecMul(count, commands):
 
 
         path = 'new_bing_flower/%s/%s' % (sclass, sub_class)
-        s = 'python %s "%s" "%s" "%s" >> /tmp/ylj.&' % (exec_command, sid, url, path)
+        s = 'python %s "%s" "%s" "%s" >> /tmp/ylj.log &' % (exec_command, sid, url, path)
         print s
         os.system(s)
         # print getCurrExecNum(exec_command)
