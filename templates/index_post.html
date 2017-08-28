@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <img class="logo" src="{{ static_url('img/%s' % flower_img) }}" width="100%" >
+     <br>
+     {{flower_name}}
+    <br>
+     <form action='file' enctype="multipart/form-data" method='post'>
+        <input type='file' name='file'/><br/>
+        <br><br>
+         <input type='submit' value='submit'/>
+    </form>
+
+</body>
+</html>
