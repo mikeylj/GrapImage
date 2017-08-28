@@ -11,7 +11,7 @@ def getTableTotal(tablename):
     return query
 
 #从数据库中取出一页
-def getPage(tablename, page = 1, pagesize = 10000):
+def getPage(tablename, page = 1, pagesize = 10):
     if page < 1 :
         page = 1
     offset  = (page - 1) * pagesize
@@ -28,10 +28,11 @@ def getCurrExecNum( command ):
     return output
 def ExecMul(count, commands):
     exec_command = 'Filter_file.py'
-    for i in xrange(count(commands)):
-        sid = commands[i]['id']
-        s = 'python %s "%s" &' % (exec_command, sid)
-        print s
+    print commands
+    # for i in xrange(count(commands)):
+    #     sid = commands[i]['id']
+    #     s = 'python %s "%s" &' % (exec_command, sid)
+    #     print s
 
 
         # os.system()
