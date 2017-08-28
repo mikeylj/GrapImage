@@ -22,7 +22,7 @@ class Mysql:
     # 插入数据
     def insertData(self, table, my_dict):
         try:
-            self.db.set_character_set('gb2312')
+            self.db.set_character_set('utf8')
             cols = ', '.join(my_dict.keys())
             values = '", "'.join(my_dict.values())
             sql = "INSERT INTO %s (%s) VALUES (%s)" % (table, cols, '"' + values + '"')
