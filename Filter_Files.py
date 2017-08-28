@@ -2,6 +2,7 @@
 
 import commands
 from mysql import Mysql
+import hashlib
 
 #从数据库中取出总数
 def getTableTotal(tablename):
@@ -33,7 +34,13 @@ def ExecMul(count, commands):
         url = row[1]
         sclass= row[2]
         sub_class = row[3]
-        print sid, url, sclass, sub_class
+
+        m2 = hashlib.md5()
+        m2.update(url)
+        filename = m2.hexdigest();
+        path = 'new_baidu_flower/%s/%s/%s' % (sclass, sub_class, filename)
+
+        print sid, url, sclass, sub_class, path
     # for i in xrange(len(commands)):
     #
     #     print sid
