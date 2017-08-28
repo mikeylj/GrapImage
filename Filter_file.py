@@ -31,7 +31,7 @@ if __name__ == '__main__':
         # sql = "update new_bing_flower set isdel=1 where id=%s" % sid
         db = Mysql()
         f_status_dict = {
-            'isdel' : 1
+            'isdel' : 0
         }
         db.upDate('new_bing_flower', f_status_dict, " id='%s'" % (sid))
 
