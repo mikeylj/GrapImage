@@ -26,18 +26,20 @@ if __name__ == '__main__':
     # print strName, name, filename
 
     if not op.checkName(name, strName):
-        os.unlink(filename)
+        # os.unlink(filename)
         print "已删除文件：", filename, name, strName
         # sql = "update new_bing_flower set isdel=1 where id=%s" % sid
         db = Mysql()
         f_status_dict = {
-            'isdel' : 1
+            'isdel' : 1,
+            'intro':strName
         }
         db.upDate('new_bing_flower', f_status_dict, " id='%s'" % (sid))
     else:
         print "正常：", filename, name, strName
         db = Mysql()
         f_status_dict = {
-            'isdel': 2
+            'isdel': 2,
+            'intro': strName
         }
         db.upDate('new_bing_flower', f_status_dict, " id='%s'" % (sid))

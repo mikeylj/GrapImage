@@ -13,7 +13,7 @@ def getTableTotal(tablename):
     return query
 
 #从数据库中取出一页
-def getPage(tablename, page = 1, pagesize = 10000):
+def getPage(tablename, page = 1, pagesize = 10):
     if page < 1 :
         page = 1
     offset  = (page - 1) * pagesize
