@@ -27,7 +27,7 @@ if __name__ == '__main__':
     if not not op.checkName(name, strName):
         # os.unlink(filename)
         print "已删除文件：", filename, name, strName
-        sql = "update new_bing_flower set isdel=1 where id=%" % sid
+        sql = "update new_bing_flower set isdel=1 where id=%s" % sid
         print sql
     #
     # print sid, url, path, filename
