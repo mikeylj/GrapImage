@@ -40,7 +40,7 @@ def ExecMul(count, commands):
         m2 = hashlib.md5()
         m2.update(url)
         filename = m2.hexdigest();
-        path = 'new_baidu_flower/%s/%s/%s' % (sclass, sub_class, filename)
+        path = 'new_baidu_flower/%s/%s/%s%s' % (sclass, sub_class, filename, ".jpg")
         s = 'python %s "%s" "%s" "%s" >> /tmp/ylj.log &' % (exec_command, sid, url, path)
         print s
         os.system(path)
