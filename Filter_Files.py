@@ -2,7 +2,6 @@
 
 import commands
 from mysql import Mysql
-import hashlib
 from time import sleep, time
 import os
 
@@ -37,10 +36,8 @@ def ExecMul(count, commands):
         sclass= row[2]
         sub_class = row[3]
 
-        m2 = hashlib.md5()
-        m2.update(url)
-        filename = m2.hexdigest();
-        path = 'new_baidu_flower/%s/%s/%s%s' % (sclass, sub_class, filename, ".jpg")
+
+        path = 'new_bing_flower/%s/%s' % (sclass, sub_class)
         s = 'python %s "%s" "%s" "%s" >> /tmp/ylj.&' % (exec_command, sid, url, path)
         print s
         os.system(s)
