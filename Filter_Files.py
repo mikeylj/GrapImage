@@ -33,8 +33,8 @@ def ExecMul(count, commands):
     for row in commands:
         sid = row[0]
         url = row[1]
-        sclass= row[2]
-        sub_class = row[3]
+        sclass= row[2].strip()
+        sub_class = row[3].strip()
 
 
         path = 'new_bing_flower/%s/%s' % (sclass, sub_class)
