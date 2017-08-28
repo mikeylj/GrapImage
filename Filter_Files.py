@@ -28,9 +28,9 @@ def getCurrExecNum( command ):
     return output
 def ExecMul(count, commands):
     exec_command = 'Filter_file.py'
-    print len(commands)
-    # for i in xrange(count(commands)):
-    #     sid = commands[i]['id']
+    for i in xrange(len(commands)):
+        sid = commands[i]['id']
+        print sid
     #     s = 'python %s "%s" &' % (exec_command, sid)
     #     print s
 
