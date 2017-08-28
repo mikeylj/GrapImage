@@ -20,13 +20,14 @@ if __name__ == '__main__':
         os.system('python DownloadOnePic.py "%s" "%s" ' % (url, path))
     #文件存在，判断文件是否与名字相同
     op = NETOP()
+    print filename, sid, url, path
     strName = op.getImageNameFromBaidu(filename)
     name = filename.split("/")[-3]
 
     # print strName, name, filename
 
     if not op.checkName(name, strName):
-        # os.unlink(filename)
+        os.unlink(filename)
         print "已删除文件：", filename, name, strName
         # sql = "update new_baidu_flower set isdel=1 where id=%s" % sid
         db = Mysql()
