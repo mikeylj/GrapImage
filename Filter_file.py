@@ -22,10 +22,10 @@ if __name__ == '__main__':
     strName = op.getImageNameFromBaidu(filename)
     name = filename.split("/")[-3]
 
-    print strName, name, filename
+    # print strName, name, filename
 
-    if not op.checkName(name, strName):
-    #     os.unlink(p)
-        print "已删除文件：", p
+    if op.checkName(name, strName):
+        # os.unlink(filename)
+        print "已删除文件：", filename, name, strName
     #
     # print sid, url, path, filename
