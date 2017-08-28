@@ -26,7 +26,7 @@ def getPage(tablename, page = 1, pagesize = 10):
 #取得当前正在执行的命令数量
 def getCurrExecNum( command ):
     output = 'ps aux|grep "python %s"|grep -v grep|wc -l' % command
-    # (status, output) = commands.getstatusoutput(s)
+    (status, output) = commands.getstatusoutput(output)
     return output
 def ExecMul(count, commands):
     exec_command = 'Filter_file.py'
@@ -43,10 +43,10 @@ def ExecMul(count, commands):
         s = 'python %s "%s" "%s" "%s" &' % (exec_command, sid, url, path)
         print s
         # os.system(path)
-        print getCurrExecNum(exec_command)
-        # while (int(getCurrExecNum(exec_command)) > 500):
-        #     print "Current Proc:" + getCurrExecNum(exec_command)
-        #     sleep(1)
+        # print getCurrExecNum(exec_command)
+        while (int(getCurrExecNum(exec_command)) > 500):
+            print "Current Proc:" + getCurrExecNum(exec_command)
+            sleep(1)
 
 
 
