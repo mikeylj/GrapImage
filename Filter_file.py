@@ -31,8 +31,13 @@ if __name__ == '__main__':
         # sql = "update new_bing_flower set isdel=1 where id=%s" % sid
         db = Mysql()
         f_status_dict = {
-            'isdel' : 0
+            'isdel' : 1
         }
         db.upDate('new_bing_flower', f_status_dict, " id='%s'" % (sid))
     else:
         print "正常：", filename, name, strName
+        db = Mysql()
+        f_status_dict = {
+            'isdel': 2
+        }
+        db.upDate('new_bing_flower', f_status_dict, " id='%s'" % (sid))
