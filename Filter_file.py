@@ -18,7 +18,8 @@ if __name__ == '__main__':
         print 'python DownloadOnePic.py "%s" "%s"' % (url, path)
         os.system('python DownloadOnePic.py "%s" "%s" ' % (url, path))
     #文件存在，判断文件是否与名字相同
-    strName = NETOP.getImageNameFromBaidu(filename)
+    op = NETOP()
+    strName = op.getImageNameFromBaidu(filename)
     name = filename.split("/")[-2]
 
     print strName, name
