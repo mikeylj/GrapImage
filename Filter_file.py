@@ -25,8 +25,8 @@ if __name__ == '__main__':
 
     # print strName, name, filename
 
-    if not not op.checkName(name, strName):
-        # os.unlink(filename)
+    if not op.checkName(name, strName):
+        os.unlink(filename)
         print "已删除文件：", filename, name, strName
         # sql = "update new_bing_flower set isdel=1 where id=%s" % sid
         db = Mysql()
