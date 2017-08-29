@@ -37,7 +37,7 @@ def ExecMul(count, commands):
         sub_class = row[3].strip()
 
 
-        path = 'new_baidu_flower/%s/%s' % (sclass, sub_class)
+        path = 'new_bing_flower/%s/%s' % (sclass, sub_class)
         s = 'python %s "%s" "%s" "%s" >> /tmp/ylj.log &' % (exec_command, sid, url, path)
         print s
         os.system(s)
@@ -62,8 +62,8 @@ def ExecMul(count, commands):
 
 
 
-# getTableTotal('new_baidu_flower')
-newBaiDs    = getPage('new_baidu_flower', 1, 10000)
+# getTableTotal('new_bing_flower')
+newBaiDs    = getPage('new_bing_flower', 1, 10000)
 
 ExecMul(10, newBaiDs)
 
