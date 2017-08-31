@@ -2,6 +2,7 @@
 
 import os
 import imghdr
+import hashlib
 
 
 root_dir = "/home/ylj/tag_sys/GrapImage/baike_fl/download/"
@@ -18,6 +19,9 @@ for dirname in os.listdir(root_dir):
 		if not arr_pic_name_ext[1] == "":
 			continue
 		pic_full_name = flow_name_dir+pic_name.replace("&", "\&")
+		m2 = hashlib.md5()
+		m2.update(pic_full_name)
+		filename = m2.hexdigest();
 		pic_type = imghdr.what(pic_full_name)
-		os.rename(pic_full_name,pic_full_name+"."+pic_type)
+		os.rename(pic_full_name,filename+"."+pic_type)
 		print "pic_full_name:"+pic_full_name
