@@ -2,6 +2,7 @@
 
 import os
 import imghdr
+import hashlib
 
 
 root_dir = "/home/ylj/tag_sys/GrapImage/baike_fl/download/"
@@ -19,5 +20,16 @@ for dirname in os.listdir(root_dir):
 			continue
 		pic_full_name = flow_name_dir+pic_name
 		pic_type = imghdr.what(pic_full_name)
-		os.rename(pic_full_name,pic_full_name+"."+pic_type)
+		print pic_full_name, pic_type
+
+		m2 = hashlib.md5()
+		m2.update(pic_full_name)
+		filename = m2.hexdigest();
+		print filename, flow_name_dir + filename
+		os.rename(pic_full_name, flow_name_dir + filename)
+
+		if pic_type:
+			os.rename(flow_name_dir + filename,flow_name_dir + filename+"."+pic_type)
+		else:
+			os.rename(flow_name_dir + filename, flow_name_dir + filename + ".jpg")
 		print "pic_full_name:"+pic_full_name
