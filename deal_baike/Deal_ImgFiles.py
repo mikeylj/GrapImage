@@ -42,11 +42,11 @@ def ExecMul(count, commands):
         sclass = path.split("/")[-2]
         s = 'python %s "%s" "%s" >> /tmp/ylj.log &' % (exec_command, sclass, path)
         print s
-        # os.system(s)
-        # # print getCurrExecNum(exec_command)
-        # while (int(getCurrExecNum(exec_command)) > count):
-        #     print "Current Proc:" + getCurrExecNum(exec_command)
-        #     sleep(1)
+        os.system(s)
+        # print getCurrExecNum(exec_command)
+        while (int(getCurrExecNum(exec_command)) > count):
+            print "Current Proc:" + getCurrExecNum(exec_command)
+            sleep(1)
 
 
 
