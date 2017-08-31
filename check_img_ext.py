@@ -4,11 +4,11 @@ import os
 import imghdr
 
 
-root_dir = "download_goo/"
+root_dir = "/home/ylj/tag_sys/GrapImage/baike_fl/download/"
 for dirname in os.listdir(root_dir):
 
-        if dirname == ".DS_Store":
-                continue
+    if dirname == ".DS_Store":
+        continue
 #       print dirname+"/data.log"
 	flow_name_dir = root_dir + dirname + "/"
 	for pic_name in os.listdir( flow_name_dir):
