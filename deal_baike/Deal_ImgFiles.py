@@ -31,20 +31,21 @@ def getCurrExecNum( command ):
 def ExecMul(count, commands):
     exec_command = 'Deal_ImgFile.py'
     for row in commands:
-        sid = row[0]
-        url = row[1]
-        sclass= row[2].strip()
-        sub_class = row[3].strip()
-
-
-        path = 'new_bing_flower/%s/%s' % (sclass, sub_class)
-        s = 'python %s "%s" "%s" "%s" >> /tmp/ylj.log &' % (exec_command, sid, url, path)
-        print s
-        os.system(s)
-        # print getCurrExecNum(exec_command)
-        while (int(getCurrExecNum(exec_command)) > count):
-            print "Current Proc:" + getCurrExecNum(exec_command)
-            sleep(1)
+        print row
+        # sid = row[0]
+        # url = row[1]
+        # sclass= row[2].strip()
+        # sub_class = row[3].strip()
+        #
+        #
+        # path = 'new_bing_flower/%s/%s' % (sclass, sub_class)
+        # s = 'python %s "%s" "%s" "%s" >> /tmp/ylj.log &' % (exec_command, sid, url, path)
+        # print s
+        # os.system(s)
+        # # print getCurrExecNum(exec_command)
+        # while (int(getCurrExecNum(exec_command)) > count):
+        #     print "Current Proc:" + getCurrExecNum(exec_command)
+        #     sleep(1)
 
 
 
@@ -54,10 +55,14 @@ def ExecMul(count, commands):
 #
 # ExecMul(10, newBaiDs)
 root_dir = "/home/ylj/tag_sys/GrapImage/baike_fl/download/"
+ImageFiles = []
 for dirname in os.listdir(root_dir):
     flow_name_dir = root_dir + dirname + "/"
     for pic_name in os.listdir(flow_name_dir):
         pic_full_name = flow_name_dir+pic_name
-        print pic_full_name
+        ImageFiles.append(pic_full_name)
+        # print pic_full_name
 
 
+
+ExecMul(10, ImageFiles)
