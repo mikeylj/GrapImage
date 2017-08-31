@@ -31,16 +31,17 @@ def getCurrExecNum( command ):
 def ExecMul(count, commands):
     exec_command = 'Deal_ImgFile.py'
     for row in commands:
-        print row
+        # print row
         # sid = row[0]
         # url = row[1]
         # sclass= row[2].strip()
         # sub_class = row[3].strip()
         #
         #
-        # path = 'new_bing_flower/%s/%s' % (sclass, sub_class)
-        # s = 'python %s "%s" "%s" "%s" >> /tmp/ylj.log &' % (exec_command, sid, url, path)
-        # print s
+        path = row
+        sclass = path.split("/")[-2]
+        s = 'python %s "%s" "%s" >> /tmp/ylj.log &' % (exec_command, sclass, path)
+        print s
         # os.system(s)
         # # print getCurrExecNum(exec_command)
         # while (int(getCurrExecNum(exec_command)) > count):
