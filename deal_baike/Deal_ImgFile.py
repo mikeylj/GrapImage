@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
     #文件存在，判断文件是否与名字相同
     op = NETOP()
-    strName = op.getImageNameFromBaidu(filename)
+    strName = op.getImageNameFromBaidu(path)
     name = sclass
 
     # print strName, name, filename
