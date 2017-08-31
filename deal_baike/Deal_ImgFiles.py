@@ -1,27 +1,27 @@
 #coding: utf-8
 
 import commands
-from mysql import Mysql
+# from mysql import Mysql
 from time import sleep, time
 import os
 
-#从数据库中取出总数
-def getTableTotal(tablename):
-    sql = 'select count(1) from %s where isdel=0'%tablename;
-    db = Mysql()
-    query = db.queryDataBySql(sql)
-    return query
-
-#从数据库中取出一页
-def getPage(tablename, page = 1, pagesize = 10):
-    if page < 1 :
-        page = 1
-    offset  = (page - 1) * pagesize
-    end     = offset + pagesize
-    sql = 'select * from %s where isdel = 0 limit %s, %s' % (tablename, offset, end)
-    db = Mysql()
-    query = db.queryDataBySql(sql)
-    return query
+# #从数据库中取出总数
+# def getTableTotal(tablename):
+#     sql = 'select count(1) from %s where isdel=0'%tablename;
+#     db = Mysql()
+#     query = db.queryDataBySql(sql)
+#     return query
+#
+# #从数据库中取出一页
+# def getPage(tablename, page = 1, pagesize = 10):
+#     if page < 1 :
+#         page = 1
+#     offset  = (page - 1) * pagesize
+#     end     = offset + pagesize
+#     sql = 'select * from %s where isdel = 0 limit %s, %s' % (tablename, offset, end)
+#     db = Mysql()
+#     query = db.queryDataBySql(sql)
+#     return query
 
 #取得当前正在执行的命令数量
 def getCurrExecNum( command ):
