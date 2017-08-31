@@ -5,6 +5,7 @@ import hashlib
 from netOp import NETOP
 # from mysql import Mysql
 from pathlib import Path
+import shutil
 
 root_dir = "/home/ylj/tag_sys/GrapImage/baike_fl/download_deal/"
 
@@ -21,20 +22,21 @@ if __name__ == '__main__':
     m2 = hashlib.md5()
     m2.update(path)
     filename = m2.hexdigest();
-    filename = '%s/%s/%s' % (root_dir, sclass, filename + ".jpg")
+    filename = '%s%s/%s' % (root_dir, sclass, filename + ".jpg")
 
 
     #文件存在，判断文件是否与名字相同
     op = NETOP()
-    print path, filename
+    strName = op.getImageNameFromBaidu(filename)
+    name = sclass
 
-    
-    # strName = op.getImageNameFromBaidu(filename)
-    # name = filename.split("/")[-3]
-    #
-    # # print strName, name, filename
-    #
-    # if not op.checkName(name, strName):
+    # print strName, name, filename
+
+    print path, filename, strName, name
+    if op.checkName(name, strName):
+        shutil.copy(path, filename)
+
+
     #     os.unlink(filename)
     #     print "已删除文件：", filename, name, strName
     #     # sql = "update new_bing_flower set isdel=1 where id=%s" % sid
