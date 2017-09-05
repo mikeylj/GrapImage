@@ -22,7 +22,7 @@ def getPage(tablename, page = 1, pagesize = 10):
     return query
 
 def ExecMul():
-    newBaiDs = getPage('new_baidu_flower', 1, 1000000)
+    newBaiDs = getPage('new_baidu_flower', 1, 10)
     for row in newBaiDs:
         sid = row[0]
         url = row[1]
@@ -32,8 +32,8 @@ def ExecMul():
         m2.update(url)
         filename = m2.hexdigest();
 
-        path = 'new_baidu_flower/%s/%s/%s.jpg' % (sclass, sub_class, filename)
-        print sclass, sub_class, filename
+        path = '/home/ylj/tag_sys/GrapImage/new_baidu_flower/%s/%s/%s.jpg' % (sclass, sub_class, filename)
+        print sclass, sub_class, path
 
 ExecMul()
 
