@@ -61,12 +61,12 @@ for dir_path, dir_names, file_names in os.walk(pathName):
                 d_p = os.path.join(test_dir, p)
                 if not os.path.exists(d_p):
                     os.makedirs(d_p)
-            print i, d_p
+            # print i, d_p
             from_file = os.path.join(dir_path, file_names[i])
-            # if(getsize(from_file) < 100):
-            #     print from_file, getsize(from_file)
+            if(getsize(from_file) < 100):
+                print from_file, getsize(from_file)
             to_file =  os.path.join(d_p, file_names[i])
-            print from_file, to_file
+            # print from_file, to_file
 
             shutil.copy(from_file, to_file)
     # #
