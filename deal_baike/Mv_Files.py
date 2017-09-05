@@ -32,7 +32,7 @@ def ExecMul():
         m2.update(url)
         filename = m2.hexdigest();
 
-        path = 'new_baidu_flower/%s/%s/%s' % (sclass, sub_class, filename)
+        path = 'new_baidu_flower/%s/%s/%s.jpg' % (sclass, sub_class, filename)
         print sclass, sub_class, filename
 
 ExecMul()
