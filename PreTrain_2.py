@@ -42,11 +42,11 @@ for dir_path, dir_names, file_names in os.walk(pathName):
                 s = from_file.split('.')
                 # os.rename(s[-1] + ".gif")
 
-                print s[-1] + ".gif", pic_type
+                print s[-2] + ".gif", pic_type
 
             elif pic_type == 'png':
                 s = from_file.split('.')
-                print s[-1] + ".png", pic_type
+                print s[-2] + ".png", pic_type
 
             else:
                 os.unlink(from_file)
