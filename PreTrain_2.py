@@ -48,7 +48,7 @@ for dir_path, dir_names, file_names in os.walk(pathName):
             try:
                 image = Image.open(from_file)
                 # print image
-                # print from_file
+                print from_file
             except IOError, e:
                 print e
 
