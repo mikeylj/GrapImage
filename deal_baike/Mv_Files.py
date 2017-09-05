@@ -35,7 +35,7 @@ def ExecMul():
         path = 'new_baidu_flower/%s/%s/%s' % (sclass, sub_class, filename)
         print sclass, sub_class, filename
 
-
+ExecMul()
 
 
 
