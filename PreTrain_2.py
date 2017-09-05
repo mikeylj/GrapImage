@@ -39,9 +39,9 @@ for dir_path, dir_names, file_names in os.walk(pathName):
             if  pic_type == 'jpeg':
                 pass
             elif pic_type == 'gif':
-                pass
+                print from_file
             elif pic_type == 'png':
-                pass
+                print from_file
             else:
                 os.unlink(from_file)
                 print from_file, pic_type
