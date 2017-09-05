@@ -45,6 +45,8 @@ for dir_path, dir_names, file_names in os.walk(pathName):
             else:
                 os.unlink(from_file)
                 print from_file, pic_type
+
+            image = Image.open(from_file)
             # try:
             #     image = Image.open(from_file)
             #     # print image
