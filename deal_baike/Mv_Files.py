@@ -24,7 +24,7 @@ def getPage(tablename, page = 1, pagesize = 10):
     return query
 
 def ExecMul():
-    newBaiDs = getPage('new_baidu_flower', 1, 10)
+    newBaiDs = getPage('new_baidu_flower', 1, 11)
     for row in newBaiDs:
         sid = row[0]
         url = row[1]
