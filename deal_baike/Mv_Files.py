@@ -4,6 +4,9 @@ from mysql import Mysql
 import hashlib
 import shutil
 import os
+from pathlib import Path
+
+
 #从数据库中取出总数
 def getTableTotal(tablename):
     sql = 'select count(1) from %s where isdel=2'%tablename;
@@ -37,7 +40,12 @@ def ExecMul():
         path = '/home/ylj/tag_sys/GrapImage/new_baidu_flower/%s/%s/%s.jpg' % (sclass, sub_class, filename)
 
         des_path = '/home/ylj/tag_sys/GrapImage/baike_fl/download_deal/%s/%s.jpg' % (sclass, filename)
+        des = '/home/ylj/tag_sys/GrapImage/baike_fl/download_deal/%s/' % sclass
         if os.path.isfile(path):
+            ddir = Path(des)
+            if not ddir.exists():
+                ddir.mkdir(parents=True)
+
             shutil.copy(path, des_path)
         else:
             print sclass, sub_class, path, des_path
