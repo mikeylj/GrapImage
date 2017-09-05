@@ -37,7 +37,7 @@ for dir_path, dir_names, file_names in os.walk(pathName):
             from_file = os.path.join(dir_path, file_names[i])
             pic_type = imghdr.what(from_file)
             if  pic_type == 'jpeg':
-                pass
+                print from_file, pic_type
             elif pic_type == 'gif':
                 # s = from_file.split('.')
                 # os.rename(from_file, s[-2] + ".gif")
