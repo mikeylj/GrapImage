@@ -51,6 +51,6 @@ for dir_path, dir_names, file_names in os.walk(pathName):
             #     print from_file, getsize(from_file)
             to_file =  os.path.join(d_p, file_names[i])
             print from_file, to_file
-            
-            # shutil.copy(from_file, to_file)
+
+            shutil.copy(from_file, to_file)
     #
