@@ -4,6 +4,7 @@ import codecs
 import os
 import shutil
 from os.path import join, getsize
+import imghdr
 
 train_num   = 512
 test_num    = 128
@@ -29,28 +30,33 @@ for dir_path, dir_names, file_names in os.walk(pathName):
     if fileNums > 640:
         print dir_path, fileNums
     if(fileNums > 640):
-        #测试训练集
         for i in range(fileNums):
-            p = dir_path.split('/')[-1]
-            #复制进入训练集
-            if i < train_num:
-                d_p = os.path.join(train_dir, p)
-                if not os.path.exists(d_p):
-                    os.makedirs(d_p)
-            elif i < train_num + test_num:
-                d_p = os.path.join(validation_dir, p )
-                if not os.path.exists(d_p):
-                    os.makedirs(d_p)
-            else:
-                d_p = os.path.join(test_dir, p)
-                if not os.path.exists(d_p):
-                    os.makedirs(d_p)
-            print i, d_p
             from_file = os.path.join(dir_path, file_names[i])
-            # if(getsize(from_file) < 100):
-            #     print from_file, getsize(from_file)
-            to_file =  os.path.join(d_p, file_names[i])
-            print from_file, to_file
+            pic_type = imghdr.what(from_file)
+            print from_file, pic_type
 
-            shutil.copy(from_file, to_file)
+    #     #测试训练集
+    #     for i in range(fileNums):
+    #         p = dir_path.split('/')[-1]
+    #         #复制进入训练集
+    #         if i < train_num:
+    #             d_p = os.path.join(train_dir, p)
+    #             if not os.path.exists(d_p):
+    #                 os.makedirs(d_p)
+    #         elif i < train_num + test_num:
+    #             d_p = os.path.join(validation_dir, p )
+    #             if not os.path.exists(d_p):
+    #                 os.makedirs(d_p)
+    #         else:
+    #             d_p = os.path.join(test_dir, p)
+    #             if not os.path.exists(d_p):
+    #                 os.makedirs(d_p)
+    #         print i, d_p
+    #         from_file = os.path.join(dir_path, file_names[i])
+    #         # if(getsize(from_file) < 100):
+    #         #     print from_file, getsize(from_file)
+    #         to_file =  os.path.join(d_p, file_names[i])
+    #         print from_file, to_file
     #
+    #         shutil.copy(from_file, to_file)
+    # #
