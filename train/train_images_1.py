@@ -14,6 +14,9 @@ import cv2
 import os
 from keras import backend as K
 
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
+
 # dimensions of our images.
 img_width, img_height = 150, 150
 
