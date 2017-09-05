@@ -40,6 +40,7 @@ for dir_path, dir_names, file_names in os.walk(pathName):
             elif pic_type == 'png':
                 pass
             else:
+                os.unlink(from_file)
                 print from_file, pic_type
 
 
