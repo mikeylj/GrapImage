@@ -49,6 +49,7 @@ for dir_path, dir_names, file_names in os.walk(pathName):
                 image = Image.open(from_file)
                 # print image
             except Exception, e:
+                os.unlink(from_file)
                 print e
 
 
