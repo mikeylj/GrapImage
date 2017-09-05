@@ -38,8 +38,8 @@ def ExecMul():
 
         des_path = '/home/ylj/tag_sys/GrapImage/baike_fl/download_deal/%s/%s.jpg' % (sclass, filename)
         print sclass, sub_class, path, des_path
-        shutil.copy(path, des_path)
-
+        ret =shutil.copy(path, des_path)
+        print ret
 ExecMul()
 
 
