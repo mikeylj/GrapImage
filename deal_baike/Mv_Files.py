@@ -17,6 +17,7 @@ def getPage(tablename, page = 1, pagesize = 10):
     offset  = (page - 1) * pagesize
     end     = offset + pagesize
     sql = "select * from %s where isdel = 2 and and class='一串红' limit %s, %s" % (tablename, offset, end)
+    print sql
     db = Mysql()
     query = db.queryDataBySql(sql)
     return query
