@@ -33,7 +33,9 @@ for dir_path, dir_names, file_names in os.walk(pathName):
         for i in range(fileNums):
             from_file = os.path.join(dir_path, file_names[i])
             pic_type = imghdr.what(from_file)
-            print from_file, pic_type
+            if not pic_type == 'jpeg':
+                print from_file, pic_type
+
 
     #     #测试训练集
     #     for i in range(fileNums):
