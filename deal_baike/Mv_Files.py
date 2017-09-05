@@ -5,7 +5,7 @@ import hashlib
 
 #从数据库中取出总数
 def getTableTotal(tablename):
-    sql = "select count(1) from %s where isdel=2 and class='一串红'"%tablename;
+    sql = 'select count(1) from %s where isdel=2'%tablename;
     db = Mysql()
     query = db.queryDataBySql(sql)
     return query
@@ -16,13 +16,13 @@ def getPage(tablename, page = 1, pagesize = 10):
         page = 1
     offset  = (page - 1) * pagesize
     end     = offset + pagesize
-    sql = 'select * from %s where isdel = 2 limit %s, %s' % (tablename, offset, end)
+    sql = "select * from %s where isdel = 2 and and class='一串红' limit %s, %s" % (tablename, offset, end)
     db = Mysql()
     query = db.queryDataBySql(sql)
     return query
 
 def ExecMul():
-    newBaiDs = getPage('new_baidu_flower', 1, 1000000)
+    newBaiDs = getPage('new_baidu_flower', 1, 10)
     for row in newBaiDs:
         sid = row[0]
         url = row[1]
