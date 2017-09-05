@@ -33,7 +33,9 @@ def ExecMul():
         filename = m2.hexdigest();
 
         path = '/home/ylj/tag_sys/GrapImage/new_baidu_flower/%s/%s/%s.jpg' % (sclass, sub_class, filename)
-        print sclass, sub_class, path
+
+        des_path = '/home/ylj/tag_sys/GrapImage/baike_fl/download_deal/%s.jpg' % filename
+        print sclass, sub_class, path, des_path
 
 ExecMul()
 
