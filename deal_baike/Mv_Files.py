@@ -37,9 +37,10 @@ def ExecMul():
         path = '/home/ylj/tag_sys/GrapImage/new_baidu_flower/%s/%s/%s.jpg' % (sclass, sub_class, filename)
 
         des_path = '/home/ylj/tag_sys/GrapImage/baike_fl/download_deal/%s/%s.jpg' % (sclass, filename)
-        print sclass, sub_class, path, des_path
-        if os.path.isfile(filename):
+        if os.path.isfile(path):
             shutil.copy(path, des_path)
+        else:
+            print sclass, sub_class, path, des_path
 
 ExecMul()
 
