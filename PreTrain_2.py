@@ -6,6 +6,8 @@ import shutil
 from os.path import join, getsize
 import imghdr
 from PIL import Image
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 train_num   = 512
 test_num    = 128
