@@ -9,7 +9,7 @@ from PIL import Image
 from PIL import ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-train_num   = 800
+train_num   = 960
 test_num    = 160
 pathName = '/home/ylj/tag_sys/GrapImage/baike_fl/download_deal/'
 disPathName = '/home/ylj/tag_sys/GrapImage/baike_train'

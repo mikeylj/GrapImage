@@ -9,8 +9,8 @@ from PIL import Image
 from PIL import ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-train_num   = 512
-test_num    = 128
+train_num   = 960
+test_num    = 160
 pathName = '/home/ylj/tag_sys/GrapImage/baike_fl/download_deal/'
 disPathName = '/home/ylj/tag_sys/GrapImage/baike_train'
 
@@ -32,7 +32,7 @@ for dir_path, dir_names, file_names in os.walk(pathName):
 
     # if fileNums > 640:
     #     print dir_path, fileNums
-    if(fileNums > 640):
+    if(fileNums > (train_num + test_num)):
         print dir_path, fileNums
         # 删除类型为None文件
         for i in range(fileNums):
