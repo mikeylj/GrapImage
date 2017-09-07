@@ -9,8 +9,8 @@ from PIL import Image
 from PIL import ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-train_num   = 1200
-test_num    = 320
+train_num   = 960
+test_num    = 160
 pathName = '/home/ylj/tag_sys/GrapImage/new_data/'
 disPathName = '/home/ylj/tag_sys/GrapImage/new_data_train/'
 

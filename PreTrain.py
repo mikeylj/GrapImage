@@ -6,8 +6,8 @@ import shutil
 from os.path import join, getsize
 import imghdr
 
-train_num   = 1200
-test_num    = 320
+train_num   = 960
+test_num    = 160
 # pathName = '/home/ylj/tag_sys/GrapImage/baike_fl/download_deal/'
 # disPathName = '/home/ylj/tag_sys/GrapImage/baike_train'
 
