@@ -23,9 +23,9 @@ img_width, img_height = 150, 150
 top_model_weights_path = './trained_vgg16/bottleneck_fc_model_weights.h5'
 train_data_dir = '/home/ylj/tag_sys/GrapImage/baike_train/train'
 validation_data_dir = '/home/ylj/tag_sys/GrapImage/baike_train/validation'
-dic_num = 18
+dic_num = 8
 
-nb_train_samples = 800 * dic_num
+nb_train_samples = 960 * dic_num
 nb_validation_samples = 160 * dic_num
 epochs = 50
 batch_size = 16
@@ -81,7 +81,7 @@ def train_top_model():
     #     [0] * 3000 + [1] * 3000 + [2] * 3000 + [3] * 3000 + [4] * 2992)
     labels = []
     for i in range(dic_num):
-        for j in range(800):
+        for j in range(960):
             labels.append(i)
     train_labels = np.array(
         labels
