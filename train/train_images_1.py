@@ -25,8 +25,11 @@ train_data_dir = '/home/ylj/tag_sys/GrapImage/new_data_train/train'
 validation_data_dir = '/home/ylj/tag_sys/GrapImage/new_data_train/validation'
 dic_num = 8
 
-nb_train_samples = 960 * dic_num
-nb_validation_samples = 160 * dic_num
+train_num   = 960
+test_num    = 320
+
+nb_train_samples = train_num * dic_num
+nb_validation_samples = test_num * dic_num
 epochs = 50
 batch_size = 16
 
@@ -81,7 +84,7 @@ def train_top_model():
     #     [0] * 3000 + [1] * 3000 + [2] * 3000 + [3] * 3000 + [4] * 2992)
     labels = []
     for i in range(dic_num):
-        for j in range(960):
+        for j in range(train_num):
             labels.append(i)
     train_labels = np.array(
         labels
@@ -94,7 +97,7 @@ def train_top_model():
     #     [0] * 500 + [1] *500 + [2] * 500 + [3] * 500 + [4] * 496)
     labels = []
     for i in range(dic_num):
-        for j in range(160):
+        for j in range(test_num):
             labels.append(i)
     validation_labels = np.array(
         labels
