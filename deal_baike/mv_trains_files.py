@@ -45,16 +45,15 @@ for dirname in os.listdir(pathName):
         continue
     else:
         print path
-        # for dir_path, dir_names, file_names in os.walk(path):
-        #     fileNums = len(file_names)
-        #     # print fileNums
-        #     for file in file_names:
-        #         file_p = '%s/%s'%(dir_path, file)
-        #         des_p = '%s%s/%s' % (pathName, dirname, file)
-        #         print file_p
-        #         print des_p
-        #         os._exit(0)
-        #         # shutil.copy(file_p, des_p)
+        for dir_path, dir_names, file_names in os.walk(path):
+            fileNums = len(file_names)
+            # print fileNums
+            for file in file_names:
+                file_p = '%s/%s'%(dir_path, file)
+                des_p = '%s%s/%s' % (pathName, dirname, file)
+                # print file_p
+                # print des_p
+                shutil.copy(file_p, des_p)
 
 
 
