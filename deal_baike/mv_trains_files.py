@@ -50,9 +50,9 @@ for dirname in os.listdir(pathName):
             # print fileNums
             for file in file_names:
                 file_p = '%s/%s'%(dir_path, file)
-                des_p = '%s%s/%s' % (pathName, dirname, file)
-                # print file_p
-                # print des_p
+                des_p = '%s%s/' % (pathName, dirname)
+                print file_p
+                print des_p
                 shutil.copy(file_p, des_p)
 
 
