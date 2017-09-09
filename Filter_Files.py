@@ -18,7 +18,7 @@ def getPage(tablename, page = 1, pagesize = 10):
         page = 1
     offset  = (page - 1) * pagesize
     end     = offset + pagesize
-    sql = 'select * from %s where isdel = 0 limit %s, %s' % (tablename, offset, end)
+    sql = "select * from %s where isdel = 0 and class in ('杜鹃', '桂花', '荷花', '菊花', '康乃馨', '梅花', '玫瑰', '米兰花', '茉莉', '牡丹', '郁金香', '栀子花') limit %s, %s" % (tablename, offset, end)
     db = Mysql()
     query = db.queryDataBySql(sql)
     return query
