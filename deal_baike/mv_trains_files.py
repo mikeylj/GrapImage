@@ -40,19 +40,20 @@ fromPathName = '/home/ylj/tag_sys/GrapImage/baike_fl/download_deal/';
 # print os.listdir(pathName)
 for dirname in os.listdir(pathName):
     path = '%s%s'%(fromPathName, dirname)
-    print path
+    # print path
     if not os.path.exists(path):
         continue
     else:
         for dir_path, dir_names, file_names in os.walk(path):
             fileNums = len(file_names)
-            print fileNums
+            # print fileNums
             for file in file_names:
                 file_p = '%s/%s'%(dir_path, file)
                 des_p = '%s%s%s' % (pathName, dirname, file)
                 print file_p
                 print des_p
                 os._exit(0)
+                # shutil.copy(file_p, des_p)
 
 
 
