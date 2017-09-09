@@ -48,6 +48,8 @@ for dirname in os.listdir(pathName):
             fileNums = len(file_names)
             print fileNums
             for file in file_names:
-                print file
+                file_p = '%s/%s'%(dir_path, file)
+                print file_p
+
 
 
