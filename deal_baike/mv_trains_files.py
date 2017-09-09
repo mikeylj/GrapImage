@@ -49,7 +49,9 @@ for dirname in os.listdir(pathName):
             print fileNums
             for file in file_names:
                 file_p = '%s/%s'%(dir_path, file)
+                des_p = '%s%s%s' % (pathName, dirname, file)
                 print file_p
+                print des_p
                 os._exit(0)
 
 
