@@ -39,7 +39,6 @@ fromPathName = '/home/ylj/tag_sys/GrapImage/baike_fl/download_deal/';
 #取得文件夹名
 # print os.listdir(pathName)
 for dirname in os.listdir(pathName):
-    print dirname
     path = '%s%s'%(fromPathName, dirname)
     print path
     if not os.path.exists(path):
@@ -48,5 +47,7 @@ for dirname in os.listdir(pathName):
         for dir_path, dir_names, file_names in os.walk(path):
             fileNums = len(file_names)
             print fileNums
-            
+            for file in file_names:
+                print file
+
 
