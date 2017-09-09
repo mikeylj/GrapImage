@@ -37,5 +37,7 @@ fromPathName = '/home/ylj/tag_sys/GrapImage/baike_fl/download_deal/';
 
 
 #取得文件夹名
-for dirname in os.listdir(pathName):
-    print dirname
+print os.listdir(pathName)
+# for dirname in os.listdir(pathName):
+#     print dirname
+
