@@ -12,7 +12,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 train_num   = 800
 test_num    = 160
 # pathName = '/home/ylj/tag_sys/GrapImage/TRAINS_bak'
-pathName = '/home/ylj/tag_sys/GrapImage/baike_fl/download_deal/';
+pathName = '/home/ylj/tag_sys/GrapImage/TRAINS_bak';
 fromPathName = '/home/ylj/tag_sys/GrapImage/baike_fl/download_deal/';
 
 # train_dir = os.path.join(disPathName, 'train')
@@ -44,16 +44,17 @@ for dirname in os.listdir(pathName):
     if not os.path.exists(path):
         continue
     else:
-        for dir_path, dir_names, file_names in os.walk(path):
-            fileNums = len(file_names)
-            # print fileNums
-            for file in file_names:
-                file_p = '%s/%s'%(dir_path, file)
-                des_p = '%s%s/%s' % (pathName, dirname, file)
-                print file_p
-                print des_p
-                os._exit(0)
-                # shutil.copy(file_p, des_p)
+        print path
+        # for dir_path, dir_names, file_names in os.walk(path):
+        #     fileNums = len(file_names)
+        #     # print fileNums
+        #     for file in file_names:
+        #         file_p = '%s/%s'%(dir_path, file)
+        #         des_p = '%s%s/%s' % (pathName, dirname, file)
+        #         print file_p
+        #         print des_p
+        #         os._exit(0)
+        #         # shutil.copy(file_p, des_p)
 
 
 
