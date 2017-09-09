@@ -50,6 +50,7 @@ for dirname in os.listdir(pathName):
             for file in file_names:
                 file_p = '%s/%s'%(dir_path, file)
                 print file_p
+                os._exit(0)
 
 
 
