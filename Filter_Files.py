@@ -37,7 +37,7 @@ def ExecMul(count, commands):
         sub_class = row[3].strip()
 
 
-        path = 'new_bing_flower/%s/%s' % (sclass, sub_class)
+        path = '/home/ylj/tag_sys/GrapImage/new_bing_flower/%s/%s' % (sclass, sub_class)
         s = 'python %s "%s" "%s" "%s" >> /tmp/ylj.log &' % (exec_command, sid, url, path)
         print s
         os.system(s)

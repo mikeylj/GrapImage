@@ -16,8 +16,8 @@ if __name__ == '__main__':
     filename    = download_path = '%s/%s' % (path, filename + ".jpg")
     #文件不存在，则下载
     if not os.path.isfile(filename):
-        print '下载文件：python DownloadOnePic.py "%s" "%s"' % (url, path)
-        os.system('python DownloadOnePic.py "%s" "%s" ' % (url, path))
+        print '下载文件：python /home/ylj/tag_sys/GrapImage/DownloadOnePic.py "%s" "%s"' % (url, path)
+        os.system('python /home/ylj/tag_sys/GrapImage/DownloadOnePic.py "%s" "%s" ' % (url, path))
     #文件存在，判断文件是否与名字相同
     op = NETOP()
     print filename, sid, url, path
