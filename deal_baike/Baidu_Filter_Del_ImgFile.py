@@ -7,7 +7,7 @@ from netOp import NETOP
 from pathlib import Path
 import shutil
 
-root_dir = "/home/ylj/tag_sys/GrapImage/TRAINS_bak/"
+# root_dir = "/home/ylj/tag_sys/GrapImage/TRAINS_bak/"
 
 if __name__ == '__main__':
     sclass = sys.argv[1]
