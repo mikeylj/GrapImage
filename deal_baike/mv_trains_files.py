@@ -43,7 +43,7 @@ fromPathName = '/home/ylj/data_down_zh';
 # print os.listdir(pathName)
 for dirname in os.listdir(pathName):
     path = '%s%s'%(fromPathName, dirname)
-    # print path
+    print path
     if not os.path.exists(path):
         continue
     else:
