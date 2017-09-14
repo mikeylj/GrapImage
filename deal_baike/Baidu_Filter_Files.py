@@ -25,5 +25,32 @@ def getClasses(path):
 
     return image_paths;
 
-images = getClasses(pathName)
-print images
+
+def getCurrExecNum( command ):
+    output = 'ps aux|grep "python %s"|grep -v grep|wc -l' % command
+    (status, output) = commands.getstatusoutput(output)
+    return output
+def ExecMul(count, commands):
+    exec_command = 'Baidu_Filter_Del_ImgFile.py'
+    for row in commands:
+        # print row
+        # sid = row[0]
+        # url = row[1]
+        # sclass= row[2].strip()
+        # sub_class = row[3].strip()
+        #
+        #
+        path = row
+        sclass = path.split("/")[-2]
+        s = 'python %s "%s" "%s" >> /tmp/ylj.log &' % (exec_command, sclass, path)
+        print s
+        os.system(s)
+        # print getCurrExecNum(exec_command)
+        while (int(getCurrExecNum(exec_command)) > count):
+            print "Current Proc:" + getCurrExecNum(exec_command)
+            sleep(1)
+
+ImageFiles = getClasses(pathName)
+
+
+ExecMul(10, ImageFiles)
