@@ -16,7 +16,7 @@ train_num   = 800
 test_num    = 160
 # pathName = '/home/ylj/tag_sys/GrapImage/TRAINS_bak'
 pathName = '/home/ylj/tag_sys/GrapImage/TRAINS_bak';
-fromPathName = '/home/ylj/data_down_zh';
+fromPathName = '/home/ylj/data_down_zh/';
 
 # train_dir = os.path.join(disPathName, 'train')
 # validation_dir = os.path.join(disPathName, 'validation')
