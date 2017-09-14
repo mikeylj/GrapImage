@@ -19,10 +19,9 @@ if __name__ == '__main__':
 
     # print strName, name, filename
 
-    print path, sclass, strName
     if not op.checkName(sclass, strName):
-        print "删除！"
-        # os.unlink(filename)
+        print path, sclass, strName, "删除！"
+        os.unlink(path)
         # shutil.copy(path, filename)
 
 
