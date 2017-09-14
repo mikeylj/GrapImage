@@ -7,13 +7,16 @@ from os.path import join, getsize
 import imghdr
 from PIL import Image
 from PIL import ImageFile
+import hashlib
+import imghdr
+
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 train_num   = 800
 test_num    = 160
 # pathName = '/home/ylj/tag_sys/GrapImage/TRAINS_bak'
 pathName = '/home/ylj/tag_sys/GrapImage/TRAINS_bak';
-fromPathName = '/home/ylj/tag_sys/GrapImage/baike_fl/download_deal/';
+fromPathName = '/home/ylj/data_down_zh';
 
 # train_dir = os.path.join(disPathName, 'train')
 # validation_dir = os.path.join(disPathName, 'validation')
@@ -50,10 +53,16 @@ for dirname in os.listdir(pathName):
             # print fileNums
             for file in file_names:
                 file_p = '%s/%s'%(dir_path, file)
-                des_p = '%s/%s/%s' % (pathName, dirname, file)
-                print file_p
-                print des_p
-                shutil.copy(file_p, des_p)
+                pic_type = imghdr.what(file_p)
+                if  pic_type == 'jpeg':
+                    m2 = hashlib.md5()
+                    m2.update(file_p)
+                    filename = m2.hexdigest() + ".jpg";
+                    des_p = '%s/%s/%s' % (pathName, dirname, filename)
+                    print file_p, des_p
+                    shutil.copy(file_p, des_p)
+                else:
+                    continue
 
 
 
