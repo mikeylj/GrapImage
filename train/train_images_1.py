@@ -23,10 +23,10 @@ img_width, img_height = 150, 150
 top_model_weights_path = './trained_vgg16/bottleneck_fc_model_weights.h5'
 train_data_dir = '/home/ylj/tag_sys/GrapImage/new_data_train/train'
 validation_data_dir = '/home/ylj/tag_sys/GrapImage/new_data_train/validation'
-dic_num = 8
+dic_num = 11
 
-train_num   = 800
-test_num    = 160
+train_num   = 2240
+test_num    = 240
 
 nb_train_samples = train_num * dic_num
 nb_validation_samples = test_num * dic_num
