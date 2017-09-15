@@ -11,21 +11,21 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 train_num   = 800
 test_num    = 160
-pathName = '/home/ylj/tag_sys/GrapImage/new_data/'
-disPathName = '/home/ylj/tag_sys/GrapImage/new_data_train/'
-
-train_dir = os.path.join(disPathName, 'train')
-validation_dir = os.path.join(disPathName, 'validation')
-test_dir = os.path.join(disPathName, 'test')
-if not os.path.exists(train_dir):
-    os.makedirs(train_dir)
-
-if not os.path.exists(validation_dir):
-    os.makedirs(validation_dir)
-
-if not os.path.exists(test_dir):
-    os.makedirs(test_dir)
-
+pathName = '/home/ylj/tag_sys/GrapImage/TRAINS_bak/'
+# disPathName = '/home/ylj/tag_sys/GrapImage/new_data_train/'
+#
+# train_dir = os.path.join(disPathName, 'train')
+# validation_dir = os.path.join(disPathName, 'validation')
+# test_dir = os.path.join(disPathName, 'test')
+# if not os.path.exists(train_dir):
+#     os.makedirs(train_dir)
+#
+# if not os.path.exists(validation_dir):
+#     os.makedirs(validation_dir)
+#
+# if not os.path.exists(test_dir):
+#     os.makedirs(test_dir)
+#
 for dir_path, dir_names, file_names in os.walk(pathName):
     fileNums = len(file_names)
 
@@ -39,20 +39,24 @@ for dir_path, dir_names, file_names in os.walk(pathName):
             from_file = os.path.join(dir_path, file_names[i])
             pic_type = imghdr.what(from_file)
             if  pic_type == 'jpeg':
-                print from_file, pic_type
+                pass
+                # print from_file, pic_type
             elif pic_type == 'gif':
                 # s = from_file.split('.')
                 # os.rename(from_file, s[-2] + ".gif")
                 # print s[-2] + ".gif", pic_type
                 # print from_file, pic_type
+                print from_file, pic_type, '删除'
                 os.unlink(from_file)
             elif pic_type == 'png':
                 # s = from_file.split('.')
                 # os.rename(from_file, s[-2] + ".png")
                 # print s[-2] + ".png", pic_type
                 # print from_file, pic_type
+                print from_file, pic_type, '删除'
                 os.unlink(from_file)
             else:
+                print from_file, pic_type, '删除'
                 os.unlink(from_file)
                 # print from_file, pic_type
 
