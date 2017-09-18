@@ -25,8 +25,8 @@ train_data_dir = '/home/ylj/tag_sys/GrapImage/new_data_train/train'
 validation_data_dir = '/home/ylj/tag_sys/GrapImage/new_data_train/validation'
 dic_num = 11
 
-train_num   = 2240
-test_num    = 240
+train_num   = 3200
+test_num    = 160
 
 nb_train_samples = train_num * dic_num
 nb_validation_samples = test_num * dic_num
