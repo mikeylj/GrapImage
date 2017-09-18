@@ -11,20 +11,23 @@ from keras.utils import to_categorical #多分类
 
 # path to the model weights files.
 # weights_path = '../keras/examples/vgg16_weights.h5'
-top_model_weights_path = './trained_vgg16/bottleneck_fc_model_weights.h5'
 # dimensions of our images.
 img_width, img_height = 150, 150
 
-train_data_dir = '/home/ylj/tag_sys/GrapImage/baike_train/train'
-validation_data_dir = '/home/ylj/tag_sys/GrapImage/baike_train/validation'
+top_model_weights_path = './trained_vgg16/bottleneck_fc_model_weights.h5'
+train_data_dir = '/home/ylj/tag_sys/GrapImage/new_data_train/train'
+validation_data_dir = '/home/ylj/tag_sys/GrapImage/new_data_train/validation'
 dic_num = 31
 
-nb_train_samples = 96 * dic_num
-nb_validation_samples = 16 * dic_num
+train_num   = 3200
+test_num    = 160
+
+nb_train_samples = train_num * dic_num
+nb_validation_samples = test_num * dic_num
 
 # nb_train_samples = 15000
 # nb_validation_samples = 2500
-epochs = 50
+epochs = 500
 batch_size = 16
 
 # build the VGG16 network

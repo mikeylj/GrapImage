@@ -30,7 +30,7 @@ test_num    = 160
 
 nb_train_samples = train_num * dic_num
 nb_validation_samples = test_num * dic_num
-epochs = 50
+epochs = 500
 batch_size = 16
 
 #设定GPU使用内存大小(Tensorflow backend)
