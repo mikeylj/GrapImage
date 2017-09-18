@@ -5,6 +5,7 @@ import os
 import shutil
 from os.path import join, getsize
 import imghdr
+from PIL import Image
 
 train_num   = 3200
 test_num    = 160
@@ -69,9 +70,14 @@ for dir_path, dir_names, file_names in os.walk(pathName):
             # print i, d_p
             from_file = os.path.join(dir_path, file_names[i])
             if(getsize(from_file) < 100):
-                print from_file, getsize(from_file)
+                print "ERROR", from_file, getsize(from_file)
+            try:
+                image = Image.open(from_file)
+            except IOError, e:
+                print "错误:" , from_file
+
             to_file =  os.path.join(d_p, file_names[i])
-            print from_file, to_file
+            # print from_file, to_file
 
             shutil.copy(from_file, to_file)
     # #
