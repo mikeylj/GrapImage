@@ -71,10 +71,12 @@ for dir_path, dir_names, file_names in os.walk(pathName):
             from_file = os.path.join(dir_path, file_names[i])
             if(getsize(from_file) < 100):
                 print "ERROR", from_file, getsize(from_file)
+                continue
             try:
                 image = Image.open(from_file)
             except IOError, e:
                 print "错误:" , from_file
+                continue
 
             to_file =  os.path.join(d_p, file_names[i])
             # print from_file, to_file
