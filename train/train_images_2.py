@@ -17,7 +17,7 @@ img_width, img_height = 150, 150
 top_model_weights_path = './trained_vgg16/bottleneck_fc_model_weights.h5'
 train_data_dir = '/home/ylj/tag_sys/GrapImage/new_data_train/train'
 validation_data_dir = '/home/ylj/tag_sys/GrapImage/new_data_train/validation'
-dic_num = 31
+dic_num = 11
 
 train_num   = 3200
 test_num    = 160
