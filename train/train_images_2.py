@@ -8,10 +8,12 @@ from keras.layers import Dropout, Flatten, Dense, Input
 from keras.engine.training import Model
 import numpy as np
 from keras.utils import to_categorical #多分类
+from PIL import ImageFile
 
 # path to the model weights files.
 # weights_path = '../keras/examples/vgg16_weights.h5'
 # dimensions of our images.
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 img_width, img_height = 150, 150
 
 top_model_weights_path = './trained_vgg16/bottleneck_fc_model_weights.h5'
