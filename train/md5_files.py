@@ -54,7 +54,8 @@ if __name__ == "__main__":
         for dir_path, dir_names, file_names in os.walk(pathName):
             for filename in file_names:
                 file = os.path.join(dir_path, filename)
-                print file
+                # print file
+                CalcMD5(file)
 
 
     # hashfile = sys.argv[1]
