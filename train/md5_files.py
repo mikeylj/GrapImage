@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # python 检测文件MD5值
 # python version 2.6
 
