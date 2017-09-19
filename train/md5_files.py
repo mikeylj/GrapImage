@@ -44,19 +44,23 @@ def CalcMD5(filepath):
         md5obj = hashlib.md5()
         md5obj.update(f.read())
         hash = md5obj.hexdigest()
-        print(hash)
+        # print(hash)
         return hash
 
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
+        files_md5   = []
         pathName = sys.argv[1]
         for dir_path, dir_names, file_names in os.walk(pathName):
             for filename in file_names:
                 file = os.path.join(dir_path, filename)
                 # print file
-                CalcMD5(file)
-
+                h = CalcMD5(file)
+                if not h in files_md5:
+                    files_md5.append(h);
+                else:
+                    print file, h
 
     # hashfile = sys.argv[1]
         # if not os.path.exists(hashfile):
