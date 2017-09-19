@@ -61,6 +61,7 @@ if __name__ == "__main__":
                     files_md5.append(h);
                 else:
                     print file, h
+                    os.unlink(file)
 
     # hashfile = sys.argv[1]
         # if not os.path.exists(hashfile):
