@@ -75,16 +75,16 @@ for dir_path, dir_names, file_names in os.walk(pathName):
                 continue
             try:
                 image = Image.open(from_file)
-                exif = image.info['exif']
-                print from_file, exif
+                # exif = image.info['exif']
+                # print from_file, exif
             except IOError, e:
                 print "错误:" , from_file
                 print e
                 # os.unlink(from_file)
                 # continue
-            except KeyError, e:
-                print "错误:", from_file
-                print e
+            # except KeyError, e:
+            #     print "错误:", from_file
+            #     print e
 
             to_file =  os.path.join(d_p, file_names[i])
             # print from_file, to_file
